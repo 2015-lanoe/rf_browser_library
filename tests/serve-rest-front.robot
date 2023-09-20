@@ -1,6 +1,7 @@
 *** Settings ***
-Resource  ../resources/serve-rest-front.resource
-Suite Setup  Cadastrar usuario e logar
+Resource        ../resources/serve-rest-front.resource
+Suite Setup     Cadastrar usuario e logar
+Suite Teardown  Close Browser    ALL
 
 
 *** Test Cases ***
