@@ -20,7 +20,7 @@ jobs:
         with:
          node-version: '19.1'
 
-      - name: Install Requiriments
+      - name: Install Requirements
         run: |
          python -m pip install --upgrade pip
          pip install -U -r requirements.txt
