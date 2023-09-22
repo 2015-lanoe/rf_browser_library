@@ -15,15 +15,15 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Instal Node.js 19.1
+      - name: Install Node.js 19.1
         uses: actions/setup-node@v3
         with:
          node-version: '19.1'
 
       - name: Install Requiriments
         run: |
-         python -m pip instal --upgrade pip
-         pip install -U -r requiriments.txt
+         python -m pip install --upgrade pip
+         pip install -U -r requirements.txt
          npm install @playwright/test
          npx playwright install-deps
          rfbrowser init
@@ -34,7 +34,7 @@ jobs:
       
       - name: Upload Tests Results
         if: always()
-        uses: actions/Upload-Artifact@v3 
+        uses: actions/upload-artifact@v3 
         with: 
           name: results-chromium
           path: ./results
@@ -51,7 +51,7 @@ jobs:
         if: always()
         uses: joonvena/robotframework-reporter-action@v2.1
         with:
-          report_path: results-chromim
+          report_path: results-chromium
           gh_access_token: ${{ secrets.GITHUB_TOKEN }}
           show_passed_tests: false
 
