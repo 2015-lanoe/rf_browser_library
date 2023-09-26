@@ -47,12 +47,12 @@ jobs:
         with:
           name: results-chromium
 
-      # - name: Send Report
-      #   if: always()
-      #   uses: joonvena/robotframework-reporter-action@v2.1
-      #   with:
-      #     report_path: results-chromium
-      #     gh_access_token: ${{ secrets.GITHUB_TOKEN }}
-      #     show_passed_tests: false
+      - name: Send Report
+        if: always()
+        uses: joonvena/robotframework-reporter-action@v2.1
+        with:
+          report_path: results-chromium
+          gh_access_token: ${{ secrets.GITHUB_TOKEN }}
+          show_passed_tests: false
 
 
